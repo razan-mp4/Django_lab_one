@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointments</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Appointments</h1>
+        <ul class="list-group mt-3">
+            {% for appointment in appointments %}
+                <li class="list-group-item">
+                    <strong>{{ appointment.date }}</strong> - {{ appointment.patient.first_name }} {{ appointment.patient.last_name }} with Dr. {{ appointment.dentist.first_name }} {{ appointment.dentist.last_name }} - {{ appointment.notes }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="btn btn-primary mt-3" href="{% url 'home' %}">Back to Home</a>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

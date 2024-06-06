@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedbacks</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Feedbacks</h1>
+        <ul class="list-group mt-3">
+            {% for feedback in feedbacks %}
+                <li class="list-group-item">
+                    <strong>{{ feedback.patient.first_name }} {{ feedback.patient.last_name }}</strong> about Dr. {{ feedback.dentist.first_name }} {{ feedback.dentist.last_name }}: {{ feedback.rating }} stars - {{ feedback.comments }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="btn btn-primary mt-3" href="{% url 'home' %}">Back to Home</a>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
